@@ -8,7 +8,7 @@ Caranya, buka website https://pemilu2019.kpu.go.id/#/ppwp/hitung-suara/:
 4. Paste kode dibawah, di bawah tab consolenya
 ```
 var allRows = document.getElementsByTagName("tr")    
-for(var i=0; i<allRows.length; i++) { 
+for(var i=1; i<allRows.length; i++) { 
     cell = allRows[i].cells
     if(parseInt(cell[1].innerHTML.replace(/\./g, "")) > parseInt(cell[2].innerHTML.replace(/\./g, ""))) {
         cell[1].style.backgroundColor = "#0766A9"
@@ -20,7 +20,8 @@ for(var i=0; i<allRows.length; i++) {
 }
 ```
 
-Pasangan yang menang akan terhighlight warna biru
+Pasangan yang menang akan terhighlight warna biru (Per daerahnya, bukan nama)
 
 Contoh gambar
+
 ![contoh screenshot](https://i.ibb.co/cDyypbz/Screen-Shot-2019-04-25-at-10-24-35-PM.png)
