@@ -21,3 +21,6 @@ for(var i=0; i<allRows.length; i++) {
 ```
 
 Pasangan yang menang akan terhighlight warna biru
+
+Contoh gambar
+![contoh screenshot](https://i.ibb.co/cDyypbz/Screen-Shot-2019-04-25-at-10-24-35-PM.png)
