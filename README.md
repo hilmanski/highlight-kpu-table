@@ -1,7 +1,7 @@
 Untuk yang lagi mengawasi website resmi pemilu2019 
 bisa melihat secara visual pasangan mana yang menang per daerah
 
-Caranya:
+Caranya, buka website https://pemilu2019.kpu.go.id/#/ppwp/hitung-suara/:
 1. Klik kanan 
 2. Pilih Inspect
 3. Tab console
