@@ -1,6 +1,8 @@
 Untuk yang lagi mengawasi website resmi pemilu2019 
 bisa melihat secara visual pasangan mana yang menang per daerah
 
+[Update] menampilkan data kemenangan per daerah di atas table
+
 Caranya, buka website https://pemilu2019.kpu.go.id/#/ppwp/hitung-suara/:
 1. Klik kanan 
 2. Pilih Inspect
@@ -8,15 +10,33 @@ Caranya, buka website https://pemilu2019.kpu.go.id/#/ppwp/hitung-suara/:
 4. Paste kode dibawah, di bawah tab consolenya
 ```
 var allRows = document.getElementsByTagName("tr")    
+var paslon1 = [], paslon2 = []
 for(var i=1; i<allRows.length; i++) { 
     cell = allRows[i].cells
     if(parseInt(cell[1].innerHTML.replace(/\./g, "")) > parseInt(cell[2].innerHTML.replace(/\./g, ""))) {
-        cell[1].style.backgroundColor = "#0766A9"
-        cell[1].style.color = "white"
-    } else  {    
-        cell[2].style.backgroundColor = "#0766A9"
-        cell[2].style.color = "white"
+        highlightCell(cell[1])
+        paslon1.push(cell[0].firstChild.innerHTML)
+    } else {
+        highlightCell(cell[2])
+        paslon2.push(cell[0].firstChild.innerHTML)
     }    
+}
+
+function highlightCell(cell) {
+    cell.style.backgroundColor = "#0766A9"
+    cell.style.color = "white"
+}
+
+showList("Prabowo-Sandi : ", paslon2)
+showList("Jokowi-Ma'ruf : ", paslon1)
+
+function showList(names, list) {
+    var newItem  = document.createElement("P");
+    var textnode = document.createTextNode(names + " menang di " + list.length + " daerah -> " + list.join(","));
+    newItem.appendChild(textnode); 
+
+    var table = document.getElementsByClassName('data-table')[0]
+    table.insertBefore(newItem, table.childNodes[0])
 }
 ```
 
