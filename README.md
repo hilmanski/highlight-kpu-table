@@ -5,7 +5,7 @@ Caranya, buka website https://pemilu2019.kpu.go.id/#/ppwp/hitung-suara/:
 1. Klik kanan 
 2. Pilih Inspect
 3. Tab console
-4. Paste kode dibawah
+4. Paste kode dibawah, di bawah tab consolenya
 ```
 var allRows = document.getElementsByTagName("tr")    
 for(var i=0; i<allRows.length; i++) { 
